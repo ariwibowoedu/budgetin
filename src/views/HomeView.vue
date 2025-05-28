@@ -25,26 +25,26 @@
           <p class="text-sm text-gray-700">{{ budgetPercent }}% dari budget bulanan.</p>
         </div>
       </div>
-    </div>
-    <!-- recent transaction -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 mt-4">
-      <div class="bg-white rounded-xl shadow-md p-6">
-        <h2 class="text-lg font-semibold text-green-600 mb-4">Pemasukan Terbaru</h2>
-        <ul class="space-y-2">
-          <li class="flex justify-between text-sm">
-            <span>Desc</span>
-            <span>Rp.</span>
-          </li>
-        </ul>
-      </div>
-      <div class="bg-white rounded-xl shadow-md p-6">
-        <h2 class="text-lg font-semibold text-red-600 mb-4">Pengeluaran Terbaru</h2>
-        <ul class="space-y-2">
-          <li class="flex justify-between text-sm">
-            <span>Desc</span>
-            <span>Rp.</span>
-          </li>
-        </ul>
+      <!-- recent transaction -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8 mt-4">
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h2 class="text-lg font-semibold text-green-600 mb-4">Pemasukan Terbaru</h2>
+          <ul class="space-y-2">
+            <li class="flex justify-between text-sm">
+              <span>Desc</span>
+              <span>Rp.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h2 class="text-lg font-semibold text-red-600 mb-4">Pengeluaran Terbaru</h2>
+          <ul class="space-y-2">
+            <li class="flex justify-between text-sm">
+              <span>Desc</span>
+              <span>Rp.</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

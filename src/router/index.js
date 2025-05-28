@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import AddTransaction from '@/views/AddTransaction.vue'
 import DashboardView from '@/views/DashboardView.vue'
 
 const router = createRouter({
@@ -15,11 +14,6 @@ const router = createRouter({
       path: '/dashboard',
       name: 'dashboard',
       component: DashboardView
-    },
-    {
-      path: '/add',
-      name: 'add',
-      component: AddTransaction
     },
     {
       path: '/about',

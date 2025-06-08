@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1 class="text-lg">Dashboard</h1>
-  </div>
+  <div>Profile</div>
 </template>
 
 <script>

@@ -1,9 +1,8 @@
 <template>
-  <div>Home</div>
+  <div class="">Auth Profile</div>
 </template>
 
-<script>
-export default {}
+<script setup>
 </script>
 
 <style>

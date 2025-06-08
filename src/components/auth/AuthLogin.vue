@@ -44,6 +44,10 @@ const form = reactive({
 })
 
 const handleLogin = async () => {
-  await login(form.email, form.password)
+  try {
+    await login(form.email, form.password)
+  } catch (err) {
+    console.error(err)
+  }
 }
 </script>

@@ -18,6 +18,16 @@
       <!-- link -->
       <div class="hidden lg:flex lg:gap-x-12">
         <navlink-comp />
+        <!-- tombol logout -->
+        <button
+          class="block w-full text-left text-lg px-4 py-2 rounded-lg text-red-600 hover:bg-red-100 transition duration-300"
+          @click="toggleLogout"
+        >
+          <div class="flex items-center gap-2">
+            <FeatherIcon classes="w-4 h-4" icon="log-out" />
+            <p class="text-xl text-gray-500">Logout</p>
+          </div>
+        </button>
       </div>
     </nav>
   </header>
@@ -45,11 +55,22 @@
         <div class="-my-6 divide-y divide-gray-5000/10">
           <div class="space-y-2 py-6 px-2">
             <navlink-comp @close="isMobileMenu = false" />
+            <!-- tombol logout -->
+            <button
+              class="block w-full text-left text-lg px-4 py-2 rounded-lg text-red-600 hover:bg-red-100 transition duration-300"
+              @click="toggleLogout"
+            >
+              <div class="flex items-center gap-2">
+                <FeatherIcon classes="w-4 h-4" icon="log-out" />
+                <p class="text-xl text-gray-500">Logout</p>
+              </div>
+            </button>
           </div>
         </div>
       </div>
     </div>
   </transition>
+  <AuthLogout v-if="showModalLogout" @close="showModalLogout = false" />
 </template>
 
 <script setup>
@@ -57,8 +78,14 @@ import { ref } from 'vue'
 import LogoBrand from '@/components/partials/LogoBrand.vue'
 import NavlinkComp from '@/components/partials/navigations/NavlinkComp.vue'
 import FeatherIcon from '@/components/feather/FeatherIcon.vue'
+import AuthLogout from '@/components/auth/AuthLogout.vue'
 
 const isMobileMenu = ref(false)
+
+const showModalLogout = ref(false)
+const toggleLogout = () => {
+  showModalLogout.value = !showModalLogout.value
+}
 </script>
 
 <style>

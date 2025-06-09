@@ -20,12 +20,13 @@
         <navlink-comp />
         <!-- tombol logout -->
         <button
+          v-if="authStore.isLoggedIn"
           class="block w-full text-left text-lg px-4 py-2 rounded-lg text-red-600 hover:bg-red-100 transition duration-300"
           @click="toggleLogout"
         >
           <div class="flex items-center gap-2">
-            <FeatherIcon classes="w-4 h-4" icon="log-out" />
             <p class="text-xl text-gray-500">Logout</p>
+            <FeatherIcon classes="w-4 h-4" icon="log-out" />
           </div>
         </button>
       </div>
@@ -57,12 +58,13 @@
             <navlink-comp @close="isMobileMenu = false" />
             <!-- tombol logout -->
             <button
+              v-if="authStore.isLoggedIn"
               class="block w-full text-left text-lg px-4 py-2 rounded-lg text-red-600 hover:bg-red-100 transition duration-300"
               @click="toggleLogout"
             >
               <div class="flex items-center gap-2">
-                <FeatherIcon classes="w-4 h-4" icon="log-out" />
                 <p class="text-xl text-gray-500">Logout</p>
+                <FeatherIcon classes="w-4 h-4" icon="log-out" />
               </div>
             </button>
           </div>
@@ -75,11 +77,13 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useAuthStore } from '@/stores/useAuthStore'
 import LogoBrand from '@/components/partials/LogoBrand.vue'
 import NavlinkComp from '@/components/partials/navigations/NavlinkComp.vue'
 import FeatherIcon from '@/components/feather/FeatherIcon.vue'
 import AuthLogout from '@/components/auth/AuthLogout.vue'
 
+const authStore = useAuthStore()
 const isMobileMenu = ref(false)
 
 const showModalLogout = ref(false)

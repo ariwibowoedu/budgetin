@@ -21,9 +21,10 @@
       <button
         :disabled="loading"
         type="submit"
-        class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+        class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 flex items-center justify-center gap-2"
       >
-        {{ loading ? 'Logging in' : 'Login' }}
+        <LoadingMiniComp v-if="loading" />
+        <span>{{ loading ? 'Logging in' : 'Login' }}</span>
       </button>
       <p v-if="error" class="text-red-500 text-sm">
         {{ error }}
@@ -35,6 +36,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { useAuth } from '@/components/composables/useAuth'
+import LoadingMiniComp from '@/components/partials/LoadingMiniComp.vue'
 
 const { login, loading, error } = useAuth()
 

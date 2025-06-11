@@ -26,8 +26,9 @@
       <button
         :disabled="loading"
         type="submit"
-        class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+        class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 flex items-center justify-center gap-2"
       >
+        <LoadingMiniComp v-if="loading" />
         {{ loading ? 'Registering' : 'Register' }}
       </button>
       <p v-if="error" class="text-red-500 text-sm">
@@ -40,6 +41,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { useAuth } from '@/components/composables/useAuth'
+import LoadingMiniComp from '@/components/partials/LoadingMiniComp.vue'
 
 const form = reactive({
   name: '',

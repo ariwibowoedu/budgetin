@@ -28,7 +28,5 @@ coverage
 *.sw?
 
 *.tsbuildinfo
-
-
-
+.env
 src/components/includes/firebase.js
